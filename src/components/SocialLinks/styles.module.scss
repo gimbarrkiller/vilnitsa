@@ -1,0 +1,12 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.social_links {
+  display: flex;
+  gap: 10px;
+}
+
+.social_links_btn {
+  width: 48px;
+  padding: 14px;
+}

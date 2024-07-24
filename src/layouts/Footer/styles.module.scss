@@ -1,0 +1,9 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.footer {
+  background-color: $base0;
+  width: 100%;
+  padding: 2000px 30px;
+
+}

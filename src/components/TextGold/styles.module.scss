@@ -1,0 +1,10 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.text {
+  width: fit-content;
+  font-family: MADE TheArtist Script, serif;
+  font-weight: 400;
+  color: $gold;
+
+}

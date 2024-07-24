@@ -1,0 +1,63 @@
+@import 'src/assets/styles/palette';
+
+.button {
+  position: relative;
+  height: 48px;
+  padding: 11px 20px;
+  border-radius: 24px;
+  background: $gold;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $base1;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: background, box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 2px 2px 0 $gold;
+  }
+
+  .children_while_loading {
+    opacity: 0;
+  }
+
+  .loader {
+    position: absolute;
+  }
+
+  &.full_width {
+    width: 100%;
+  }
+  .button_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+}
+.bg_transparent {
+  background: transparent;
+  color: $white;
+  border: 1px solid $gold;
+  box-shadow: none;
+}
+.icon_only {
+  padding: 0 14px;
+  .button_content {
+    height: 20px;
+  }
+}
+
+
+.disabled {
+  &:disabled {
+    cursor: not-allowed;
+    background: $gray;
+    color: $base1;
+    box-shadow: none;
+  }
+}

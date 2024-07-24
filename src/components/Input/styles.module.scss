@@ -1,0 +1,60 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.input__container {
+  position: relative;
+  width: 100%;
+}
+
+.input__box {
+  overflow: hidden;
+  height: 54px;
+  width: 100%;
+  background-color: transparent;
+
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  ::placeholder {
+    color: #1D1D1B;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+}
+
+.textarea__box {
+  height: auto;
+}
+
+.input__box_error {
+  border: 1px solid red;
+}
+
+input, textarea {
+  border: 1px solid transparent;
+  border-bottom: 1px solid $gold;
+  border-radius: 12px;
+  color: $base1;
+  background: transparent;
+  font-size: 14px;
+  line-height: 18px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  font-weight: 600;
+  &:active, &:hover, &:focus {
+    border-bottom: 1px solid $gold;
+    outline: 0;
+    outline-offset: 0;
+  }
+}
+
+.input__error {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  width: 335px;
+  color: red;
+}
