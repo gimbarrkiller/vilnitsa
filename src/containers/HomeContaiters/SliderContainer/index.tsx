@@ -30,7 +30,10 @@ export const SliderContainer = memo(() => (
         </div>
         <div className={styles.circles}>
           {circleContent.map(({ count, text }) => (
-            <div className={styles.circles_item}>
+            <div
+              key={text}
+              className={styles.circles_item}
+            >
               <div className={styles.circles_item_title}>
                 {count}
               </div>

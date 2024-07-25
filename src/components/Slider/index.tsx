@@ -12,12 +12,12 @@ import 'swiper/swiper-bundle.css';
 import './styles.css';
 
 const images = [
-  mainSlide1,
-  mainSlide2,
-  mainSlide3,
-  mainSlide1,
-  mainSlide2,
-  mainSlide3,
+  { img: mainSlide1, id: 1 },
+  { img: mainSlide2, id: 2 },
+  { img: mainSlide3, id: 3 },
+  { img: mainSlide1, id: 4 },
+  { img: mainSlide2, id: 5 },
+  { img: mainSlide3, id: 6 },
 ];
 
 export const Slider = ({ classNameContainer }: { classNameContainer?: string }) => {
@@ -49,11 +49,11 @@ export const Slider = ({ classNameContainer }: { classNameContainer?: string }) 
         modules={[Navigation]}
         className="mySwiper"
       >
-        {images.map((image) => (
+        {images.map(({ img, id }) => (
           <SwiperSlide
-            key={`${image}`}
+            key={id}
           >
-            <Image url={image} />
+            <Image url={img} />
           </SwiperSlide>
         ))}
       </Swiper>
