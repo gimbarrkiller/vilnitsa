@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 import {
-  MainContainer, PlacePowerContainer,
-  SecondMainContainer, SliderContainer, TimeOpenContainer,
+  MainContainer, PlacePowerContainer, SecondMainContainer,
+  SliderContainer, TimeOpenContainer, TransferContainer,
 } from 'containers';
 
 export const HomePage: FC = () => (
@@ -12,5 +12,6 @@ export const HomePage: FC = () => (
     <SliderContainer />
     <PlacePowerContainer />
     <TimeOpenContainer />
+    <TransferContainer />
   </>
 );

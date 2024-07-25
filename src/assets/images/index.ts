@@ -12,3 +12,5 @@ export { default as placePowerManBigImage } from './placePowerManBigImage.png';
 export { default as timeBg } from './timeBg.svg';
 export { default as timeOpenImg } from './timeOpen.png';
 export { default as timeBeBe } from './timeBeBe.png';
+export { default as transferCarImg } from './transferCar.png';
+export { default as transferCar2Img } from './transferCar2.png';
