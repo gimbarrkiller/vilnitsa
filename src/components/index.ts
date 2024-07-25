@@ -4,5 +4,6 @@ export * from './BurgerMenuForm';
 export * from './Image';
 export * from './Input';
 export * from './Loader';
+export * from './Slider';
 export * from './SocialLinks';
 export * from './TextGold';

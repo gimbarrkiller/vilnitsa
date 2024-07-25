@@ -1,0 +1,54 @@
+.mySwiper {
+    width: 100%;
+}
+
+img {
+    border-radius: 8px; /* Скругление углов изображений */
+}
+
+.swiper-backface-hidden .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.swiper-backface-hidden .swiper-slide img {
+    max-width: 75%;
+}
+.swiper-backface-hidden .swiper-slide-active img {
+    max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .swiper-backface-hidden .swiper-slide-active img {
+        padding: 0 20px;
+    }
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #D8D09E;
+    background-color: #1A1919;
+}
+@media screen and (max-width: 768px) {
+    .swiper-button-next, .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    content: url(../../assets/images/icons/arrowLeftGold.svg);
+    height: 60px;
+}
+@media screen and (max-width: 768px) {
+    .swiper-button-prev:after, .swiper-button-next:after {
+        content: url(../../assets/images/icons/arrowLeftGoldSmall.svg);
+    }
+}
+
+
+.swiper-button-prev:after {
+    transform: rotate(180deg)
+}
