@@ -4,6 +4,7 @@ import { appStateHandlers } from './handlers';
 
 export const appStoreInitialState: Readonly<AppStoreState> = {
   isOpenBurger: false,
+  isOpenFormBurger: false,
 };
 
 export default createReducer(appStoreInitialState, appStateHandlers);

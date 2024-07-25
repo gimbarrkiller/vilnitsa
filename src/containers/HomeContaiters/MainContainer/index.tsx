@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 
+import { TextGold } from 'components';
+
 import styles from './styles.module.scss';
-import { TextGold } from '../../../components';
 
 export const MainContainer = memo(() => (
   <div className={styles.main_container}>

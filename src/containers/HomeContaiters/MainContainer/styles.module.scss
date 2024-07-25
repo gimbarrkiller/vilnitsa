@@ -3,15 +3,25 @@
 
 .main_container {
   background-image: url(../../../assets/images/main_img.png);
-  background-repeat: no-repeat;
+  background-repeat: round;
+  @include desktop {
+    background-repeat: no-repeat;
+  }
+  @include tablet {
+    background-repeat: round;
+  }
+  @include mobile {
+    background-repeat: no-repeat;
+  }
 }
 
 .main_content {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   min-height: 720px;
   padding: 0 24px;
   max-width: $widthDesktop;
+  margin: 0 auto;
   position: relative;
   @include tablet {
     min-height: clamp(384px, 10vw, 720px);

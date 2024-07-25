@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 
-import { MainContainer } from 'containers';
+import { MainContainer, SecondMainContainer } from 'containers';
 
 export const HomePage: FC = () => (
-  <MainContainer />
+  <>
+    <MainContainer />
+    <SecondMainContainer />
+  </>
 );

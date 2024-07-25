@@ -1,0 +1,78 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 200px 80px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  @include tablet {
+    padding: 140px 24px;
+  }
+  @include mobile {
+    padding: 120px 16px;
+  }
+}
+
+.main_content {
+  display: flex;
+  gap: 32px;
+  @include tablet {
+    flex-direction: column-reverse;
+  }
+}
+
+.first_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.first_container_btn {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+
+}
+
+.second_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.second_content {
+  width: 50%;
+  @include desktop_small {
+    width: 75%;
+  }
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.second_container_title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  color: $gold;
+  margin-bottom: 40px;
+  @include tablet {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 24px;
+  }
+  @include mobile {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+}
+.second_container_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}

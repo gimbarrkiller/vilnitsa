@@ -5,6 +5,7 @@ import React, {
   useState,
 } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 
 import { PathName, phoneApp, ScreenWidth } from 'appConstants';
@@ -13,6 +14,8 @@ import {
   logoImage, phoneIcon,
 } from 'assets/images';
 import { useScreenWidth } from 'hooks';
+import { appStateSelectors } from 'store/appStore/selectors';
+import { appStateSetState } from 'store/appStore/actionCreators';
 
 import {
   BurgerMenu, BurgerMenuForm,
@@ -22,19 +25,22 @@ import {
 import styles from './styles.module.scss';
 
 export const Header = memo(() => {
+  const isOpenFormBurger = useSelector(appStateSelectors.getProp('isOpenFormBurger'));
+  const dispatch = useDispatch();
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const isMobile = useScreenWidth(ScreenWidth.mobile);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenForm, setIsOpenForm] = useState(false);
 
   const onBurgerChange = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
-  const onFormChange = useCallback(() => {
-    setIsOpenForm(!isOpenForm);
-  }, [isOpenForm]);
+  const onFormOpen = useCallback(() => {
+    dispatch(appStateSetState({
+      isOpenFormBurger: !isOpenFormBurger,
+    }));
+  }, [dispatch, isOpenFormBurger]);
 
   const onScrollChange = useCallback(() => {
     setIsScrolling(window.scrollY >= 1);
@@ -52,11 +58,11 @@ export const Header = memo(() => {
       <BurgerMenu
         isOpen={isOpen}
         onBurgerChange={onBurgerChange}
-        onFormChange={onFormChange}
+        onFormChange={onFormOpen}
       />
       <BurgerMenuForm
-        isOpen={isOpenForm}
-        onBurgerChange={onFormChange}
+        isOpen={isOpenFormBurger}
+        onBurgerChange={onFormOpen}
       />
       <div
         className={cn(styles.header, {
@@ -95,7 +101,7 @@ export const Header = memo(() => {
               )}
 
               {!isTablet && (
-                <Button onClick={onFormChange}>
+                <Button onClick={onFormOpen}>
                   Забронировать
                 </Button>
               )}

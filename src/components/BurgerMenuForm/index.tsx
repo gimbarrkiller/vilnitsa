@@ -21,7 +21,14 @@ interface IBurgerMenu {
 }
 
 export const BurgerMenuForm:FC<IBurgerMenu> = memo(({ onBurgerChange, isOpen }) => {
-  const [isSubmitting, setIsSubmitting] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  useEffect(() => {
+    if (isSubmitting) {
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 7000);
+    }
+  }, [isSubmitting]);
 
   const onIsSubmitting = useCallback(() => {
     setIsSubmitting(!isSubmitting);
