@@ -2,15 +2,8 @@
 @import 'src/assets/styles/mixins';
 
 .main_container {
-  padding: 200px 80px;
   max-width: $widthDesktop;
   margin: 0 auto;
-  @include tablet {
-    padding: 140px 24px;
-  }
-  @include mobile {
-    padding: 120px 16px;
-  }
 }
 
 .main_content {
@@ -27,10 +20,22 @@
   align-items: center;
   justify-content: center;
 }
+
 .first_container_btn {
   border-radius: 50%;
   width: 200px;
   height: 200px;
+}
+
+.first_container_img {
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  @include tablet {
+    width: 140px;
+    height: 140px;
+
+  }
 
 }
 

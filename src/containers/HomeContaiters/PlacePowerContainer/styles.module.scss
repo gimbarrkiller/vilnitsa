@@ -12,10 +12,10 @@
   position: relative;
   padding: 200px 80px 300px;
   @include tablet {
-    padding: 140px 80px 220px;
+    padding: 140px 24px 220px;
   }
   @include mobile {
-    padding: 80px 80px 140px;
+    padding: 80px 16px 140px;
   }
 }
 

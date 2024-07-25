@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import {
   MainContainer, PlacePowerContainer,
-  SecondMainContainer, SliderContainer,
+  SecondMainContainer, SliderContainer, TimeOpenContainer,
 } from 'containers';
 
 export const HomePage: FC = () => (
@@ -11,5 +11,6 @@ export const HomePage: FC = () => (
     <SecondMainContainer />
     <SliderContainer />
     <PlacePowerContainer />
+    <TimeOpenContainer />
   </>
 );

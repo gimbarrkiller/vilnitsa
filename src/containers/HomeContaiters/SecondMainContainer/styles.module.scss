@@ -1,0 +1,12 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 200px 80px;
+  @include tablet {
+    padding: 140px 24px;
+  }
+  @include mobile {
+    padding: 120px 16px;
+  }
+}

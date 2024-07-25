@@ -9,3 +9,6 @@ export { default as sliderBlockLineBG } from './sliderBlockLineBG.svg';
 export { default as placePowerImage } from './placePower.png';
 export { default as placePowerManImage } from './placePowerMan.png';
 export { default as placePowerManBigImage } from './placePowerManBigImage.png';
+export { default as timeBg } from './timeBg.svg';
+export { default as timeOpenImg } from './timeOpen.png';
+export { default as timeBeBe } from './timeBeBe.png';
