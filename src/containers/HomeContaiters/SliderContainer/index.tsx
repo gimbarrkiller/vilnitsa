@@ -63,7 +63,7 @@ export const SliderContainer = memo(() => {
             <AnimatedDiv
               from={-100}
               to={0}
-              duration={700}
+              duration={1000}
               opacityFrom={0}
               delay={1000}
             >
@@ -85,7 +85,7 @@ export const SliderContainer = memo(() => {
               from={100}
               to={0}
               opacityFrom={0}
-              duration={700}
+              duration={1000}
               delay={1000}
             >
               <div className={styles.slider_subtitle}>
