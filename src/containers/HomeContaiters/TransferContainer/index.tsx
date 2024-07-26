@@ -83,8 +83,8 @@ export const TransferContainer = memo(() => {
           <div className={cn(styles.transfer_cars_img_container, styles.second)}>
             {!isTablet && isView ? (
               <AnimatedDiv
-                duration={325}
-                delay={250}
+                duration={405}
+                delay={500}
                 scaleFrom={0.5}
               >
                 <Image
