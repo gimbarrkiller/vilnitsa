@@ -1,3 +1,4 @@
+export * from './AnimatedDiv';
 export * from './Button';
 export * from './BurgerMenu';
 export * from './BurgerMenuForm';

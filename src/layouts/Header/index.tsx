@@ -18,6 +18,7 @@ import { appStateSelectors } from 'store/appStore/selectors';
 import { appStateSetState } from 'store/appStore/actionCreators';
 
 import {
+  AnimatedDiv,
   BurgerMenu, BurgerMenuForm,
   Button, Image,
 } from 'components';
@@ -64,8 +65,12 @@ export const Header = memo(() => {
         isOpen={isOpenFormBurger}
         onBurgerChange={onFormOpen}
       />
-      <div
-        className={cn(styles.header, {
+
+      <AnimatedDiv
+        from={-100}
+        to={0}
+        duration={600}
+        classNameContainer={cn(styles.header, {
           [styles.header_fixed]: isScrolling,
         })}
       >
@@ -108,7 +113,7 @@ export const Header = memo(() => {
             </div>
           </div>
         </div>
-      </div>
+      </AnimatedDiv>
     </>
   );
 });
