@@ -3,7 +3,7 @@ import { PathName } from 'appConstants';
 export const links = [
   {
     title: 'Проживание',
-    pathName: PathName.Home,
+    pathName: PathName.Shale,
   },
   {
     title: 'Сибиряченок',

@@ -1,0 +1,18 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 100px 80px 200px;
+  @include tablet {
+    padding: 100px 24px 140px;
+  }
+  @include mobile {
+    padding: 86px 16px 80px;
+  }
+}
+
+.sub_content {
+  @include desktop_small {
+    width: 100%;
+  }
+}

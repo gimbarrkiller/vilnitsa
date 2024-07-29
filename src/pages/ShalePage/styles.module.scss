@@ -1,0 +1,14 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 150px 80px 200px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  @include tablet {
+    padding: 60px 24px 140px;
+  }
+  @include mobile {
+    padding: 56px 16px 80px;
+  }
+}

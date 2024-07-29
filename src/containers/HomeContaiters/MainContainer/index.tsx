@@ -51,20 +51,19 @@ export const MainContainer = memo(() => {
             </h1>
 
             {isView && (
-              <AnimatedDiv
-                from={-100}
-                to={1}
-                coordinate="x"
-                duration={325}
-                delay={200}
-                opacityFrom={0}
-                opacityTo={1}
-              >
-                <TextGold
-                  text="Вольница"
-                  className={styles.main_subtitle}
-                />
-              </AnimatedDiv>
+              <div className={styles.main_subtitle}>
+                <AnimatedDiv
+                  from={-100}
+                  to={1}
+                  coordinate="x"
+                  duration={325}
+                  delay={200}
+                  opacityFrom={0}
+                  opacityTo={1}
+                >
+                  <TextGold text="Вольница" />
+                </AnimatedDiv>
+              </div>
             )}
           </AnimatedDiv>
         </div>

@@ -7,7 +7,7 @@ import {
 
 import { PathName } from 'appConstants';
 
-import { HomePage } from 'pages';
+import { HomePage, ShalePage } from 'pages';
 import { MainLayout } from 'layouts';
 
 const Routes: FC = () => (
@@ -20,6 +20,10 @@ const Routes: FC = () => (
         <Route
           path={PathName.Home}
           element={<HomePage />}
+        />
+        <Route
+          path={PathName.Shale}
+          element={<ShalePage />}
         />
       </Route>
     </RoutesDom>

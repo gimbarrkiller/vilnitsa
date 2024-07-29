@@ -1,0 +1,48 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_content {
+  display: flex;
+  align-items: flex-end;
+  min-height: 220px;
+  padding: 0 24px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main_title {
+  white-space: nowrap;
+  font-family: Playfair Display, serif;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: clamp(36px, 5vw, 70px);
+  font-weight: 400;
+  text-align: left;
+  @include mobile {
+    white-space: initial;
+  }
+}
+
+.main_subtitle {
+  white-space: nowrap;
+  font-size: 94px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: left;
+  text-transform: none;
+  position: absolute;
+  top: calc(100% - 30px);
+  left: 50%;
+  @include laptop {
+    font-size: 84px;
+  }
+  @include tablet {
+    font-size: 74px;
+    top: 100%;
+  }
+  @include mobile {
+    font-size: 54px;
+    top: 100%;
+    left: 20%;
+  }
+}

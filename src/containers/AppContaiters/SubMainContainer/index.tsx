@@ -15,7 +15,7 @@ import styles from './styles.module.scss';
 
 interface ISubMainContainer {
   textBtn?: string;
-  title: string;
+  title?: string;
   subTitle: string;
   classNameSubtitle?: string;
   classNameContent?: string;
@@ -95,7 +95,7 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
         <div className={styles.second_container}>
           <div className={cn(styles.second_content, classNameContent)}>
 
-            {isView && (
+            {isView && title && (
               <AnimatedDiv
                 from={-100}
                 to={0}

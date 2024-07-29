@@ -6,5 +6,6 @@ export * from './Image';
 export * from './Input';
 export * from './Loader';
 export * from './Slider';
+export * from './ShalePreview';
 export * from './SocialLinks';
 export * from './TextGold';
