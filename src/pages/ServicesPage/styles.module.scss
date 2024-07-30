@@ -1,0 +1,144 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 120px 80px 200px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  @include tablet {
+    padding: 60px 24px 140px;
+  }
+  @include mobile {
+    padding: 56px 16px 120px;
+  }
+}
+
+.main_content {
+  display: flex;
+  justify-content: center;
+  min-height: 220px;
+  padding: 0 24px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main_title {
+  font-family: Playfair Display, serif;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: clamp(36px, 5vw, 70px);
+  font-weight: 400;
+  text-align: center;
+  @include mobile {
+    white-space: initial;
+  }
+}
+
+.main_subtitle {
+  font-size: 94px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  @include laptop {
+    font-size: 74px;
+  }
+  @include tablet {
+    font-size: 64px;
+  }
+  @include mobile {
+    font-size: 44px;
+  }
+}
+
+.main_bottom_text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $gold;
+  width: 50%;
+  margin: 0 auto 80px;
+  @include laptop {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+}
+
+.services_list {
+  display: flex;
+  gap: 40px;
+  @include laptop {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.services_item_img {
+  height: 540px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  position: relative;
+  @include laptop {
+    height: 300px;
+    margin-bottom: 16px;
+  }
+  &.ferme {
+    background-image: url(../../assets/images/services/ferm.png);
+  }
+  &.sauna {
+    background-image: url(../../assets/images/services/sauna.png);
+  }
+  &.excursions {
+    background-image: url(../../assets/images/services/excursions.png);
+  }
+}
+
+
+.services_item_btn {
+  position: absolute;
+  top: calc(50% - 100px);
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  @include laptop {
+    display: none;
+  }
+}
+
+.services_item {
+  width: 100%;
+  &:hover .services_item_btn {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  @include laptop {
+    cursor: pointer;
+  }
+}
+
+.services_item_title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  color: $gold;
+  @include laptop {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+

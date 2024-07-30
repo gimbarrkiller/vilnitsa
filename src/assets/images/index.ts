@@ -1,6 +1,7 @@
 export * from './icons';
 export * from './sliders';
 export * from './shales';
+export * from './services';
 
 export { default as logoImage } from './logo.svg';
 export { default as logoTextImage } from './logo_text.svg';

@@ -7,7 +7,10 @@ import {
 import { PathName } from 'appConstants';
 import { useScrollToTop } from 'hooks';
 
-import { HomePage, ShaleItemPage, ShalePage } from 'pages';
+import {
+  HomePage, ServicesPage,
+  ShaleItemPage, ShalePage,
+} from 'pages';
 import { MainLayout } from 'layouts';
 
 const Routes: FC = () => {
@@ -33,6 +36,15 @@ const Routes: FC = () => {
           <Route
             path={PathName.ItemId}
             element={<ShaleItemPage />}
+          />
+        </Route>
+        <Route
+          path={PathName.Services}
+          element={<ServicesPage />}
+        >
+          <Route
+            path={PathName.ItemId}
+            element={<ServicesPage />}
           />
         </Route>
       </Route>

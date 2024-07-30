@@ -19,7 +19,7 @@ export const links = [
   },
   {
     title: 'Развлечения',
-    pathName: PathName.Home,
+    pathName: PathName.Services,
   },
   {
     title: 'Контакты',
