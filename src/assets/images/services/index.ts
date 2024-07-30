@@ -1,3 +1,9 @@
 export { default as fermeImg } from './ferm.png';
 export { default as saunaImg } from './sauna.png';
 export { default as excursionsImg } from './excursions.png';
+export { default as fermeMainImg } from './fermeMain.png';
+export { default as unicum1Img } from './unicum1.png';
+export { default as unicumPhoto } from './unicumPhoto.png';
+export { default as acquaintanceImg } from './acquaintance.png';
+export { default as feedingImg } from './feeding.png';
+export { default as gunningImg } from './gunning.png';

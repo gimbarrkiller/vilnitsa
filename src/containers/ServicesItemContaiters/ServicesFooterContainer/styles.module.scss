@@ -1,0 +1,90 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 0 80px 200px;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  @include tablet {
+    padding: 0 24px 140px;
+  }
+  @include mobile {
+    padding: 0 16px 100px;
+  }
+}
+
+.main_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(../../../assets/images/services/gunning.png);
+  height: 740px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  padding: 80px;
+  @include laptop {
+    height: 540px;
+    padding: 40px;
+  }
+  @include tablet {
+    padding: 40px 20px;
+  }
+}
+
+.main_content_half {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  & > div {
+    width: 100%;
+  }
+
+}
+
+
+.main_title {
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Playfair Display, serif;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: clamp(36px, 5vw, 70px);
+  font-weight: 400;
+  text-align: left;
+  @include mobile {
+    white-space: initial;
+  }
+}
+
+.main_gold_title {
+  white-space: nowrap;
+  font-size: 94px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  @include laptop {
+    font-size: 84px;
+  }
+  @include tablet {
+    font-size: 74px;
+  }
+  @include mobile {
+    font-size: 54px;
+  }
+}
+
+.main_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  width: 70%;
+  @include tablet {
+    width: 100%;
+  }
+
+}

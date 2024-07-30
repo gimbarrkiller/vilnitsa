@@ -21,6 +21,7 @@ interface ISubMainContainer {
   classNameContent?: string;
   leftContent?: string;
   classNameMainContent?: string;
+  classNameLeft?: string;
 }
 
 export const SubMainContainer:FC<ISubMainContainer> = memo(({
@@ -30,6 +31,7 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
   classNameSubtitle,
   classNameContent,
   classNameMainContent,
+  classNameLeft,
   leftContent,
 }) => {
   const isOpenFormBurger = useSelector(appStateSelectors.getProp('isOpenFormBurger'));
@@ -71,7 +73,7 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
             >
               <Image
                 url={leftContent}
-                className={styles.first_container_img}
+                className={cn(styles.first_container_img, classNameLeft)}
               />
             </AnimatedDiv>
           ) : (

@@ -1,0 +1,63 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 150px 80px 0;
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  @include tablet {
+    padding: 140px 24px 0;
+  }
+  @include mobile {
+    padding: 100px 16px 0;
+  }
+}
+
+.main_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../../assets/images/services/fermeMain.png);
+  height: 700px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  @include laptop {
+    height: 394px;
+  }
+  @include tablet {
+    height: 260px;
+  }
+}
+
+.main_title {
+  white-space: nowrap;
+  font-family: Playfair Display, serif;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: clamp(36px, 5vw, 70px);
+  font-weight: 400;
+  text-align: left;
+  @include mobile {
+    white-space: initial;
+  }
+}
+
+.main_subtitle {
+  white-space: nowrap;
+  font-size: 94px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  @include laptop {
+    font-size: 84px;
+  }
+  @include tablet {
+    font-size: 74px;
+  }
+  @include mobile {
+    font-size: 54px;
+  }
+}

@@ -8,7 +8,7 @@ import { PathName } from 'appConstants';
 import { useScrollToTop } from 'hooks';
 
 import {
-  HomePage, ServicesPage,
+  HomePage, ServicesItemPage, ServicesPage,
   ShaleItemPage, ShalePage,
 } from 'pages';
 import { MainLayout } from 'layouts';
@@ -25,6 +25,7 @@ const Routes: FC = () => {
           path={PathName.Home}
           element={<HomePage />}
         />
+
         <Route
           path={PathName.Shale}
           element={<ShalePage />}
@@ -38,14 +39,20 @@ const Routes: FC = () => {
             element={<ShaleItemPage />}
           />
         </Route>
+
         <Route
           path={PathName.Services}
           element={<ServicesPage />}
+        />
+        <Route
+          path={PathName.Services}
+          element={<ServicesItemPage />}
         >
           <Route
             path={PathName.ItemId}
-            element={<ServicesPage />}
+            element={<ServicesItemPage />}
           />
+
         </Route>
       </Route>
     </RoutesDom>
