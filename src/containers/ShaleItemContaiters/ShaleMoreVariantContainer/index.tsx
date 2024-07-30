@@ -15,14 +15,16 @@ export const ShaleMoreVariantContainer = memo(() => {
 
   return (
     <div className={styles.more_container}>
-      <div className={styles.slider_container}>
-        <div className={styles.slider_content}>
-          <Slider
-            classNameContainer={styles.slider_bg}
-            list={newArr}
-            countImgs={1}
-          />
-        </div>
+      <div className={styles.more_title}>
+        Другие варианты
+      </div>
+      <div className={styles.slider_content}>
+        <Slider
+          classNameContainer={styles.slider_bg}
+          list={newArr}
+          countImgs={1}
+          isControl={false}
+        />
       </div>
     </div>
   );

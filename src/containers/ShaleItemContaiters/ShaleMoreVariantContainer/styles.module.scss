@@ -12,3 +12,23 @@
     padding: 120px 16px;
   }
 }
+
+.more_title {
+  font-family: Playfair Display, serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 88px;
+  text-align: left;
+  width: calc(100% - 160px);
+  margin-bottom: 80px;
+  @include tablet {
+    margin-bottom: 40px;
+    font-size: 48px;
+    line-height: 52px;
+  }
+  @include mobile {
+    margin-bottom: 32px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+}

@@ -1,6 +1,10 @@
-import React, { FC, useMemo } from 'react';
+import React, {
+  FC, useCallback,
+  useMemo, useRef,
+} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import cn from 'classnames';
 
 import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
@@ -23,6 +27,7 @@ interface ISlider {
   }[]
   images?: { img: string, id: number }[];
   countImgs?: number;
+  isControl?: boolean;
 }
 
 export const Slider:FC<ISlider> = ({
@@ -30,6 +35,7 @@ export const Slider:FC<ISlider> = ({
   images,
   list,
   countImgs,
+  isControl = true,
 }) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const isMobile = useScreenWidth(ScreenWidth.mobile);
@@ -51,13 +57,45 @@ export const Slider:FC<ISlider> = ({
     return 4;
   }, [isTablet, isMobile, isDesktop, countImgs]);
 
+  const swiperRef = useRef(null);
+
+  const handleNext = useCallback(() => {
+    if (swiperRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      swiperRef.current.swiper.slideNext();
+    }
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    if (swiperRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      swiperRef.current.swiper.slidePrev();
+    }
+  }, []);
+
   return (
-    <div className={classNameContainer}>
+    <div className={cn(classNameContainer, !isControl ? 'not_control' : '')}>
+      {!isControl && (
+        <>
+          <button
+            onClick={handlePrev}
+            className="swiper-button-prev"
+          />
+          <button
+            onClick={handleNext}
+            className="swiper-button-next"
+          />
+        </>
+      )}
+
       <Swiper
+        ref={swiperRef}
         spaceBetween={30}
         centeredSlides
         slidesPerView={countSlider}
-        navigation
+        navigation={isControl}
         loop
         modules={[Navigation]}
         className="mySwiper"
