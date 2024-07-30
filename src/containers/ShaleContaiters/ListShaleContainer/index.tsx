@@ -4,9 +4,9 @@ import React, {
 } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { AnimatedDiv, ShalePreview } from 'components';
+import { dataShales } from 'appConstants';
 
-import { dataShales } from './shales';
+import { AnimatedDiv, ShalePreview } from 'components';
 
 import styles from './styles.module.scss';
 

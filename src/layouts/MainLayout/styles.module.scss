@@ -3,3 +3,9 @@
 
 .layout_wrapper {
 }
+
+.layout_top {
+  grid-area: layout_top;
+  position: absolute;
+  top: 0;
+}

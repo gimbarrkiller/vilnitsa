@@ -12,3 +12,7 @@ export { default as placeIcon } from './place.svg';
 export { default as socialTgIcon } from './socialTg.svg';
 export { default as socialWAIcon } from './socialWA.svg';
 export { default as socialVKIcon } from './socialVK.svg';
+
+export { default as furnitureIcon } from './furniture.svg';
+export { default as bathIcon } from './bath.svg';
+export { default as moreIcon } from './more.svg';

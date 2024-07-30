@@ -1,6 +1,10 @@
 import React, { FC } from 'react';
 
-import { FirstShaleItemContainer, SecondShaleItemContainer, ShaleSliderContainer } from 'containers';
+import {
+  FirstShaleItemContainer, SecondShaleItemContainer,
+  ShaleSliderContainer, ShaleAllAmenitiesContainer,
+  ShaleMoreVariantContainer,
+} from 'containers';
 
 import styles from './styles.module.scss';
 
@@ -9,5 +13,7 @@ export const ShaleItemPage: FC = () => (
     <FirstShaleItemContainer />
     <SecondShaleItemContainer />
     <ShaleSliderContainer />
+    <ShaleAllAmenitiesContainer />
+    <ShaleMoreVariantContainer />
   </div>
 );

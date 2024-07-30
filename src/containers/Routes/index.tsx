@@ -1,17 +1,18 @@
 import React, { FC } from 'react';
 import {
-  BrowserRouter,
   Routes as RoutesDom,
   Route,
 } from 'react-router-dom';
 
 import { PathName } from 'appConstants';
+import { useScrollToTop } from 'hooks';
 
 import { HomePage, ShaleItemPage, ShalePage } from 'pages';
 import { MainLayout } from 'layouts';
 
-const Routes: FC = () => (
-  <BrowserRouter>
+const Routes: FC = () => {
+  useScrollToTop();
+  return (
     <RoutesDom>
       <Route
         path={PathName.Home}
@@ -36,7 +37,7 @@ const Routes: FC = () => (
         </Route>
       </Route>
     </RoutesDom>
-  </BrowserRouter>
-);
+  );
+};
 
 export { Routes };

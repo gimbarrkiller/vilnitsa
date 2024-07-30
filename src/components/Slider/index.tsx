@@ -6,19 +6,29 @@ import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
 
 import { Image } from '../Image';
+import { ShalePreview } from '../ShalePreview';
 
 import 'swiper/swiper-bundle.css';
 import './styles.css';
 
 interface ISlider {
   classNameContainer?: string;
-  images: { img: string, id: number }[];
+  list?: {
+    id: number,
+    title: string,
+    subtitle: string,
+    people: number,
+    place: number,
+    photo: string,
+  }[]
+  images?: { img: string, id: number }[];
   countImgs?: number;
 }
 
 export const Slider:FC<ISlider> = ({
   classNameContainer,
   images,
+  list,
   countImgs,
 }) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
@@ -52,7 +62,22 @@ export const Slider:FC<ISlider> = ({
         modules={[Navigation]}
         className="mySwiper"
       >
-        {images.map(({ img, id }) => (
+        {list?.length && list.map((i) => (
+          <SwiperSlide
+            key={i.id}
+          >
+            <ShalePreview
+              key={i.id}
+              id={i.id}
+              title={i.title}
+              subtitle={i.subtitle}
+              people={i.people}
+              place={i.place}
+              photo={i.photo}
+            />
+          </SwiperSlide>
+        ))}
+        {images?.length && images.map(({ img, id }) => (
           <SwiperSlide
             key={id}
           >
