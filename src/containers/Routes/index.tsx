@@ -7,7 +7,7 @@ import {
 
 import { PathName } from 'appConstants';
 
-import { HomePage, ShalePage } from 'pages';
+import { HomePage, ShaleItemPage, ShalePage } from 'pages';
 import { MainLayout } from 'layouts';
 
 const Routes: FC = () => (
@@ -25,6 +25,15 @@ const Routes: FC = () => (
           path={PathName.Shale}
           element={<ShalePage />}
         />
+        <Route
+          path={PathName.Shale}
+          element={<ShaleItemPage />}
+        >
+          <Route
+            path={PathName.ItemId}
+            element={<ShaleItemPage />}
+          />
+        </Route>
       </Route>
     </RoutesDom>
   </BrowserRouter>

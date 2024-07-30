@@ -1,6 +1,6 @@
 import React, {
-  FC, memo, useCallback,
-  useEffect, useState,
+  FC, memo, ReactNode,
+  useCallback, useEffect, useState,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
@@ -15,7 +15,7 @@ import styles from './styles.module.scss';
 
 interface ISubMainContainer {
   textBtn?: string;
-  title?: string;
+  title?: string | ReactNode;
   subTitle: string;
   classNameSubtitle?: string;
   classNameContent?: string;

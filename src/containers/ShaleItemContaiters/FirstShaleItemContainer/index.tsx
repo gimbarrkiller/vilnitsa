@@ -4,7 +4,7 @@ import { AnimatedDiv, TextGold } from 'components';
 
 import styles from './styles.module.scss';
 
-export const FirstShaleContainer = memo(() => (
+export const FirstShaleItemContainer = memo(() => (
   <AnimatedDiv
     from={-200}
     to={0}
@@ -21,11 +21,7 @@ export const FirstShaleContainer = memo(() => (
           delay={200}
         >
           <h1 className={styles.main_title}>
-            Шале для ценителей
-            <br />
-            комфорта вдали
-            <br />
-            от цивилизации
+            Двухместное шале №1
           </h1>
 
           <AnimatedDiv
@@ -38,7 +34,7 @@ export const FirstShaleContainer = memo(() => (
             opacityTo={1}
           >
             <TextGold
-              text="Сила природы"
+              text="Кедровый брус"
               className={styles.main_subtitle}
             />
           </AnimatedDiv>

@@ -34,6 +34,7 @@ export const ListShaleContainer = memo(() => {
     }) => (
       <ShalePreview
         key={id}
+        id={id}
         title={title}
         subtitle={subtitle}
         people={people}

@@ -1,0 +1,58 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  padding: 100px 80px 120px;
+  @include tablet {
+    padding: 100px 24px 140px;
+  }
+  @include mobile {
+    padding: 86px 16px 32px;
+  }
+}
+
+.sub_content {
+  @include desktop_small {
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 40px;
+  @include laptop {
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+  @include mobile {
+    margin-bottom: 32px;
+  }
+}
+
+.info_content {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.info_content_numb {
+  font-family: Playfair Display, serif;
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 90px;
+  text-align: center;
+  color: $gold;
+  @include laptop {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.info_content_str {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: $gray;
+}

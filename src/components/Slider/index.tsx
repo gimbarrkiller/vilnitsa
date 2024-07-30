@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-import { mainSlide1, mainSlide2, mainSlide3 } from 'assets/images';
 import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
 
@@ -11,21 +10,25 @@ import { Image } from '../Image';
 import 'swiper/swiper-bundle.css';
 import './styles.css';
 
-const images = [
-  { img: mainSlide1, id: 1 },
-  { img: mainSlide2, id: 2 },
-  { img: mainSlide3, id: 3 },
-  { img: mainSlide1, id: 4 },
-  { img: mainSlide2, id: 5 },
-  { img: mainSlide3, id: 6 },
-];
+interface ISlider {
+  classNameContainer?: string;
+  images: { img: string, id: number }[];
+  countImgs?: number;
+}
 
-export const Slider = ({ classNameContainer }: { classNameContainer?: string }) => {
+export const Slider:FC<ISlider> = ({
+  classNameContainer,
+  images,
+  countImgs,
+}) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const isMobile = useScreenWidth(ScreenWidth.mobile);
   const isDesktop = useScreenWidth(ScreenWidth.desktop);
 
   const countSlider = useMemo(() => {
+    if (countImgs) {
+      return countImgs;
+    }
     if (isMobile) {
       return 1;
     }
@@ -36,7 +39,7 @@ export const Slider = ({ classNameContainer }: { classNameContainer?: string }) 
       return 3;
     }
     return 4;
-  }, [isTablet, isMobile, isDesktop]);
+  }, [isTablet, isMobile, isDesktop, countImgs]);
 
   return (
     <div className={classNameContainer}>

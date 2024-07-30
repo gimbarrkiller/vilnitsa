@@ -5,6 +5,7 @@ import React, {
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
+import { mainSlide1, mainSlide2, mainSlide3 } from 'assets/images';
 import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
 
@@ -17,6 +18,15 @@ const circleContent = [
   { count: 4, text: 'шале для заселения' },
   { count: 60, text: 'минут от аэропорта' },
   { count: 40, text: 'км от Горно-Алтайска' },
+];
+
+const images = [
+  { img: mainSlide1, id: 1 },
+  { img: mainSlide2, id: 2 },
+  { img: mainSlide3, id: 3 },
+  { img: mainSlide1, id: 4 },
+  { img: mainSlide2, id: 5 },
+  { img: mainSlide3, id: 6 },
 ];
 
 export const SliderContainer = memo(() => {
@@ -49,12 +59,18 @@ export const SliderContainer = memo(() => {
             duration={700}
           >
             <div className={styles.slider_content}>
-              <Slider classNameContainer={styles.slider_bg} />
+              <Slider
+                classNameContainer={styles.slider_bg}
+                images={images}
+              />
             </div>
           </AnimatedDiv>
         ) : (
           <div className={styles.slider_content}>
-            <Slider classNameContainer={styles.slider_bg} />
+            <Slider
+              classNameContainer={styles.slider_bg}
+              images={images}
+            />
           </div>
         )}
         <div className={cn(styles.slider_content, styles.second)}>
