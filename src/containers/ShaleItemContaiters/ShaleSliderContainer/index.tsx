@@ -1,4 +1,5 @@
 import React, {
+  FC,
   memo, useCallback,
   useEffect, useState,
 } from 'react';
@@ -25,7 +26,11 @@ const images = [
   { img: shale1Img, id: 6 },
 ];
 
-export const ShaleSliderContainer = memo(() => {
+interface IShaleSliderContainer {
+  subtitleSlider: string;
+}
+
+export const ShaleSliderContainer:FC<IShaleSliderContainer> = memo(({ subtitleSlider }) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const { ref, inView } = useInView({
     threshold: 0.01,
@@ -67,14 +72,12 @@ export const ShaleSliderContainer = memo(() => {
               delay={1000}
             >
               <div className={styles.slider_title}>
-                Здесь можно насладиться тишиной и спокойствием. То самое место,
-                где время останавливается для исполнения самых заветных желаний
+                {subtitleSlider}
               </div>
             </AnimatedDiv>
           ) : (
             <div className={styles.slider_title}>
-              Здесь можно насладиться тишиной и спокойствием. То самое место,
-              где время останавливается для исполнения самых заветных желаний
+              {subtitleSlider}
             </div>
           )}
         </div>

@@ -1,15 +1,25 @@
-import React, { memo, useMemo } from 'react';
+import React, { FC, memo, useMemo } from 'react';
 
 import { SubMainContainer } from 'containers';
 
 import styles from './styles.module.scss';
 
-export const SecondShaleItemContainer = memo(() => {
+interface ISecondShaleItemContainer {
+  subtitleView: string;
+  people: number;
+  place: number;
+}
+
+export const SecondShaleItemContainer:FC<ISecondShaleItemContainer> = memo(({
+  subtitleView,
+  people,
+  place,
+}) => {
   const titleData = useMemo(() => (
     <div className={styles.info}>
       <div className={styles.info_content}>
         <div className={styles.info_content_numb}>
-          4
+          {people}
         </div>
         <div className={styles.info_content_str}>
           человека
@@ -18,20 +28,20 @@ export const SecondShaleItemContainer = memo(() => {
 
       <div className={styles.info_content}>
         <div className={styles.info_content_numb}>
-          120
+          {place}
         </div>
         <div className={styles.info_content_str}>
           кв.м
         </div>
       </div>
     </div>
-  ), []);
+  ), [place, people]);
 
   return (
     <div className={styles.main_container}>
       <SubMainContainer
         title={titleData}
-        subTitle="Роскошное VIP шале для небольшой компании. Сруб из массива 300-летнего кедра с двумя спальнями и просторной зоной отдыха с камином."
+        subTitle={subtitleView}
         classNameContent={styles.sub_content}
       />
     </div>

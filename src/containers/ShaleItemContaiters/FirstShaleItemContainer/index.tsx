@@ -1,10 +1,16 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 
 import { AnimatedDiv, TextGold } from 'components';
 
 import styles from './styles.module.scss';
 
-export const FirstShaleItemContainer = memo(() => (
+interface IFirstShaleItemContainer {
+  title: string;
+}
+
+export const FirstShaleItemContainer:FC<IFirstShaleItemContainer> = memo(({
+  title,
+}) => (
   <AnimatedDiv
     from={-200}
     to={0}
@@ -21,7 +27,7 @@ export const FirstShaleItemContainer = memo(() => (
           delay={200}
         >
           <h1 className={styles.main_title}>
-            Двухместное шале №1
+            {title}
           </h1>
 
           <AnimatedDiv
