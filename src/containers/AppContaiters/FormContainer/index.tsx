@@ -35,14 +35,20 @@ const initialValues = {
 };
 
 interface IFormContainer {
+  title?: string;
+  subtitle?: string;
   onIsSubmitting?: () => void;
 }
 
-export const FormContainer:FC<IFormContainer> = ({ onIsSubmitting }) => (
+export const FormContainer:FC<IFormContainer> = ({
+  onIsSubmitting,
+  title = 'Заполните форму',
+  subtitle = 'Укажите контактные данные, количество гостей и желаемые даты',
+}) => (
   <div>
-    <h2 className={styles.form_title}>Заполните форму</h2>
+    <h2 className={styles.form_title}>{title}</h2>
     <div className={styles.form_subtitle}>
-      Укажите контактные данные, количество гостей и желаемые даты
+      {subtitle}
     </div>
     <Formik
       validationSchema={validationSchema}

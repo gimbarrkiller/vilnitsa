@@ -7,6 +7,7 @@ import {
   FirstServicesItemContainer, SecondServicesItemContainer,
   ServicesTextContainer, ServicesUnicumContainer,
   ServicesTodoContainer, ServicesFooterContainer,
+  FormWhiteContainer,
 } from 'containers';
 
 import styles from './styles.module.scss';
@@ -26,6 +27,7 @@ export const ServicesItemPage: FC = () => {
       <ServicesUnicumContainer />
       <ServicesTodoContainer />
       <ServicesFooterContainer />
+      <FormWhiteContainer />
     </div>
   );
 };

@@ -1,0 +1,22 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.white_container {
+  background-color: $base2;
+}
+
+.white_content {
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  padding: 200px 80px;
+  color: $base1;
+  @include laptop {
+    padding: 140px 80px;
+  }
+  @include tablet {
+    padding: 100px 24px;
+  }
+  @include mobile {
+    padding: 80px 16px;
+  }
+}
