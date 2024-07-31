@@ -20,6 +20,7 @@ interface ISubMainContainer {
   classNameSubtitle?: string;
   classNameContent?: string;
   leftContent?: string;
+  leftContentCircle?: ReactNode;
   classNameMainContent?: string;
   classNameLeft?: string;
 }
@@ -33,6 +34,7 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
   classNameMainContent,
   classNameLeft,
   leftContent,
+  leftContentCircle,
 }) => {
   const isOpenFormBurger = useSelector(appStateSelectors.getProp('isOpenFormBurger'));
   const dispatch = useDispatch();
@@ -65,7 +67,7 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
     >
       <div className={cn(styles.main_content, classNameMainContent)}>
         <div className={styles.first_container}>
-          {isView && (leftContent ? (
+          {isView && !leftContentCircle && (leftContent ? (
             <AnimatedDiv
               scaleFrom={0.25}
               duration={1000}
@@ -92,6 +94,16 @@ export const SubMainContainer:FC<ISubMainContainer> = memo(({
               </Button>
             </AnimatedDiv>
           ))}
+          {leftContentCircle && (
+            <AnimatedDiv
+              opacityFrom={0}
+              opacityTo={1}
+              duration={1000}
+              delay={200}
+            >
+              {leftContentCircle}
+            </AnimatedDiv>
+          )}
         </div>
 
         <div className={styles.second_container}>

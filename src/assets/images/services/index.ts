@@ -20,4 +20,11 @@ export { default as feedingImg } from './feeding.png';
 export { default as gunningImg } from './gunning.png';
 
 export { default as activityFishImg } from './activityFish.png';
+export { default as fishingMainImg } from './fishingMain.png';
+export { default as fishingTopMainImg } from './fishingTopMain.png';
+export { default as huntingMainImgImg } from './huntingMainImg.png';
+export { default as huntingTopMainImg } from './huntingTopMain.png';
 export { default as activityHuntingImg } from './activityHunting.png';
+
+export { default as unicumCar1Img } from './unicumCar1.png';
+export { default as unicumCar2Img } from './unicumCar2.png';

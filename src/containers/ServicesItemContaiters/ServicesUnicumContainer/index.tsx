@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { unicum1Img, unicumPhoto } from 'assets/images';
+import { unicum1Img } from 'assets/images';
 
 import { AnimatedDiv, Image, TextGold } from 'components';
 import { SubMainContainer } from 'containers';
@@ -13,10 +13,22 @@ import { SubMainContainer } from 'containers';
 import styles from './styles.module.scss';
 
 interface IShaleSliderContainer {
-  subtitleSlider?: string;
+  title?: string;
+  titleGold?: string;
+  img?: string;
+  imgMini?: string;
+  subtitle?: string;
+  subtitleMini?: string;
 }
 
-export const ServicesUnicumContainer:FC<IShaleSliderContainer> = memo(() => {
+export const ServicesUnicumContainer:FC<IShaleSliderContainer> = memo(({
+  title,
+  titleGold = '',
+  img,
+  imgMini,
+  subtitle,
+  subtitleMini = '',
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.01,
   });
@@ -48,7 +60,7 @@ export const ServicesUnicumContainer:FC<IShaleSliderContainer> = memo(() => {
               delay={200}
             >
               <div className={styles.main_title}>
-                уникальная возможность - побыть с собой наедине
+                {title}
               </div>
 
               <AnimatedDiv
@@ -61,21 +73,22 @@ export const ServicesUnicumContainer:FC<IShaleSliderContainer> = memo(() => {
                 opacityTo={1}
               >
                 <TextGold
-                  text="Уединение"
+                  text={titleGold}
                   className={styles.main_subtitle}
                 />
               </AnimatedDiv>
             </AnimatedDiv>
           )}
           <div>
-            <Image url={unicum1Img} />
+            <Image url={img || unicum1Img} />
           </div>
         </div>
 
         <SubMainContainer
-          subTitle="Здесь можно насладиться тишиной̆ и спокойствием, а можно улететь в неизведанные дали в индивидуальный̆ тур на вертолете, поохотиться в дикой̆ тайге и порыбачить в горных реках Алтая."
+          subTitle={subtitleMini}
+          title={subtitle}
           classNameContent={styles.sub_content}
-          leftContent={unicumPhoto}
+          leftContent={imgMini}
           classNameLeft={styles.unicum_half_photo}
         />
 

@@ -1,0 +1,77 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.main_container {
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  padding: 80px 80px 0;
+  @include tablet {
+    padding: 60px 24px 0;
+  }
+  @include tablet {
+    padding: 40px 16px 0;
+  }
+}
+
+.main_content {
+  display: flex;
+  gap: 32px;
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.first_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.second_container_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+.second_container_subtitle.second {
+  width: 50%;
+  @include laptop {
+    width: 100%;
+  }
+}
+
+.first_phone_coord {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.first_phone_coord > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 500;
+  align-self: center;
+}
+
+.first_phone_coord_img {
+  width: 32px;
+  height: 32px;
+}
+
+.first_phone_coord_text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+
+}

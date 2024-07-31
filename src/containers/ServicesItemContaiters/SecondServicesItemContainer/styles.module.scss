@@ -30,3 +30,49 @@
     line-height: 60px;
   }
 }
+
+.circles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.circles_item {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: solid 1px $gold;
+  align-content: center;
+  @include desktop_small {
+    width: 180px;
+    height: 180px;
+    flex-wrap: wrap;
+  }
+  @include tablet {
+    width: 172px;
+    height: 172px;
+    flex-wrap: wrap;
+  }
+}
+
+.circles_item_title {
+  font-family: Playfair Display, serif;
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 90px;
+  text-align: center;
+  color: $gold;
+  @include tablet {
+    font-size: 60px;
+  }
+}
+
+.circles_item_subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: center;
+  @include tablet {
+    font-size: 10px;
+  }
+}

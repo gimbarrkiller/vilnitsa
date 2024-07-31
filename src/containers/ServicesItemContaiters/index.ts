@@ -5,3 +5,5 @@ export * from './ServicesUnicumContainer';
 export * from './ServicesTodoContainer';
 export * from './ServicesFooterContainer';
 export * from './ServicesYourServicesContainer';
+export * from './ServicesTextBlackBGContainer';
+export * from './ActivePhoneInfoContainer';

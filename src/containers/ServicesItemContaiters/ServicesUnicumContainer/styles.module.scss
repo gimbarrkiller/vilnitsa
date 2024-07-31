@@ -73,3 +73,10 @@
   height: auto;
   max-width: 350px;
 }
+
+.sub_content {
+  width: 70%;
+  @include laptop {
+    width: 100%;
+  }
+}

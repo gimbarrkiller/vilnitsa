@@ -6,3 +6,4 @@ export enum ScreenWidth {
 }
 
 export const phoneApp = '+7 (999) 000-00-00';
+export const phoneCoord = '51.691911, 81.112642';

@@ -1,0 +1,77 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.text_container {
+  background-image: url(../../../assets/images/sliderBlockBG.svg);
+  background-position-y: bottom;
+  background-size: cover;
+  padding: 200px 0;
+  @include tablet {
+    padding: 140px 0;
+  }
+  @include mobile {
+    padding: 120px 0;
+  }
+}
+
+.text_content {
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  padding: 0 80px;
+  width: 70%;
+  @include laptop {
+    width: 100%;
+  }
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include mobile {
+    padding: 0 16px;
+  }
+}
+
+.text_subcontent {
+  text-align: center;
+  background-color: $base0;
+  border-radius: 8px;
+  padding: 80px;
+  @include tablet {
+    padding: 56px;
+  }
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+.text_img {
+  width: 60px;
+  margin-bottom: 40px;
+}
+
+.text_title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: $gold;
+  @include tablet {
+    font-size: 18px;
+  }
+  @include mobile {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.text_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 auto 80px;
+  @include tablet {
+    margin-bottom: 48px;
+  }
+}

@@ -7,11 +7,11 @@ export const footerLinks = [
   },
   {
     title: 'Активный отдых',
-    pathName: PathName.Home,
+    pathName: PathName.Activity,
   },
   {
     title: 'Развлечения',
-    pathName: PathName.Home,
+    pathName: PathName.Services,
   },
   {
     title: 'Контакты',

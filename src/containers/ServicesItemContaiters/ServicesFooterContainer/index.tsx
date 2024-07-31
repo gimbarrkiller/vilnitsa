@@ -1,4 +1,5 @@
 import React, { FC, memo } from 'react';
+import cn from 'classnames';
 
 import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
@@ -8,24 +9,41 @@ import { TextGold } from 'components';
 import styles from './styles.module.scss';
 
 interface IFirstShaleItemContainer {
+  isActivity?: boolean;
   title?: string;
+  titleGold?: string;
+  subtitle?: string;
+  img?: string;
 }
 
-export const ServicesFooterContainer:FC<IFirstShaleItemContainer> = memo(() => {
+export const ServicesFooterContainer:FC<IFirstShaleItemContainer> = memo(({
+  isActivity,
+  title,
+  titleGold = '',
+  subtitle,
+  img,
+}) => {
   const isLaptop = useScreenWidth(ScreenWidth.laptop);
 
   return (
     <div
-      className={styles.main_container}
+      className={cn(styles.main_container, {
+        [styles.main_container_active]: isActivity,
+      })}
+      style={img ? { backgroundImage: `url(${img})` } : {}}
     >
-      <div className={styles.main_content}>
+      <div
+        className={cn(styles.main_content, {
+          [styles.main_content_active]: isActivity,
+        })}
+      >
         <div className={styles.main_content_half}>
           <div>
             <div className={styles.main_title}>
-              Стрельбище
+              {title}
             </div>
             <TextGold
-              text="Зоркость"
+              text={titleGold}
               className={styles.main_gold_title}
             />
           </div>
@@ -34,9 +52,12 @@ export const ServicesFooterContainer:FC<IFirstShaleItemContainer> = memo(() => {
         <div className={styles.main_content_half}>
           {!isLaptop && <div />}
           <div>
-            <div className={styles.main_subtitle}>
-              Проверить свои способности в стрельбе и натренировать меткость.
-              Для этого не придётся ехать в охотничьи угодья – на стрельбище есть всё необходимое.
+            <div
+              className={cn(styles.main_subtitle, {
+                [styles.main_subtitle_active]: isActivity,
+              })}
+            >
+              {subtitle}
             </div>
           </div>
         </div>

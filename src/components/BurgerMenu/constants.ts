@@ -15,7 +15,7 @@ export const links = [
   },
   {
     title: 'Активный отдых',
-    pathName: PathName.Home,
+    pathName: PathName.Activity,
   },
   {
     title: 'Развлечения',
