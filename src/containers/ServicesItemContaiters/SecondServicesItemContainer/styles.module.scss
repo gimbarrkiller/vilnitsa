@@ -12,6 +12,7 @@
 }
 
 .sub_content {
+  width: 70%;
   @include desktop_small {
     width: 100%;
   }

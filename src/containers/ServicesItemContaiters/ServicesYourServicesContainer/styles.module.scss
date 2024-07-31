@@ -1,0 +1,122 @@
+@import 'src/assets/styles/palette';
+@import 'src/assets/styles/mixins';
+
+.todo_container {
+  padding-bottom: 200px;
+  @include tablet {
+    padding-bottom: 140px;
+  }
+  @include mobile {
+    padding-bottom: 120px;
+  }
+}
+
+.todo_content {
+  max-width: $widthDesktop;
+  margin: 0 auto;
+  padding: 0 80px;
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include mobile {
+    padding: 0 16px;
+  }
+}
+
+.todo_title {
+  text-transform: uppercase;
+  font-family: Playfair Display, serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 88px;
+  @include laptop {
+    padding-top: 20px;
+    font-size: 48px;
+    line-height: 52px;
+  }
+  @include mobile {
+    padding-top: 0;
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.todo_subtitle {
+  font-size: 100px;
+  line-height: 100px;
+  margin-left: 50px;
+  margin-bottom: 8px;
+
+  @include laptop {
+    font-size: 60px;
+    line-height: 60px;
+    margin-left: 40px;
+
+  }
+  @include mobile {
+    font-size: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+  }
+}
+
+.todo_list {
+  display: flex;
+  gap: 40px;
+  @include tablet {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.todo_item_img {
+  height: 480px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  position: relative;
+  @include laptop {
+    height: 300px;
+    margin-bottom: 16px;
+  }
+  &.acquaintance {
+    background-image: url(../../../assets/images/services/acquaintance.png);
+  }
+  &.feeding {
+    background-image: url(../../../assets/images/services/feeding.png);
+  }
+}
+
+
+.todo_item {
+  width: 100%;
+}
+
+.todo_item_title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 24px;
+  @include tablet {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 8px;
+  }
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.todo_item_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+
+}

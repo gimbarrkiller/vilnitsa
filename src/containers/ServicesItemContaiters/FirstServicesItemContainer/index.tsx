@@ -4,11 +4,17 @@ import { AnimatedDiv, TextGold } from 'components';
 
 import styles from './styles.module.scss';
 
-interface IFirstShaleItemContainer {
+interface IFirstServicesItemContainer {
   title: string;
+  titleGold: string;
+  imgMain: string;
 }
 
-export const FirstServicesItemContainer:FC<IFirstShaleItemContainer> = memo(() => (
+export const FirstServicesItemContainer:FC<IFirstServicesItemContainer> = memo(({
+  title,
+  titleGold,
+  imgMain,
+}) => (
   <AnimatedDiv
     from={-200}
     to={0}
@@ -17,7 +23,10 @@ export const FirstServicesItemContainer:FC<IFirstShaleItemContainer> = memo(() =
     <div
       className={styles.main_container}
     >
-      <div className={styles.main_content}>
+      <div
+        className={styles.main_content}
+        style={{ backgroundImage: `url(${imgMain})` }}
+      >
         <AnimatedDiv
           from={-100}
           to={0}
@@ -25,7 +34,7 @@ export const FirstServicesItemContainer:FC<IFirstShaleItemContainer> = memo(() =
           delay={200}
         >
           <h1 className={styles.main_title}>
-            ФЕРМА И СТРЕЛЬБИЩЕ
+            {title}
           </h1>
 
           <AnimatedDiv
@@ -38,7 +47,7 @@ export const FirstServicesItemContainer:FC<IFirstShaleItemContainer> = memo(() =
             opacityTo={1}
           >
             <TextGold
-              text="Сельский колорит"
+              text={titleGold}
               className={styles.main_subtitle}
             />
           </AnimatedDiv>

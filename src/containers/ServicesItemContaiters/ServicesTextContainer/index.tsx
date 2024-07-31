@@ -14,10 +14,12 @@ import { AnimatedDiv } from 'components';
 import styles from './styles.module.scss';
 
 interface IShaleSliderContainer {
-  subtitleSlider?: string;
+  subtitleSlider: string;
 }
 
-export const ServicesTextContainer:FC<IShaleSliderContainer> = memo(() => {
+export const ServicesTextContainer:FC<IShaleSliderContainer> = memo(({
+  subtitleSlider,
+}) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const { ref, inView } = useInView({
     threshold: 0.01,
@@ -51,14 +53,12 @@ export const ServicesTextContainer:FC<IShaleSliderContainer> = memo(() => {
             delay={1000}
           >
             <div className={styles.text_title}>
-              Локальный питомник бизонов дает возможность не только увидеть вживую этих
-              удивительных животных, но и попробовать редкое мясо бизона в ресторане шале
+              {subtitleSlider}
             </div>
           </AnimatedDiv>
         ) : (
           <div className={styles.text_title}>
-            Локальный питомник бизонов дает возможность не только увидеть вживую этих
-            удивительных животных, но и попробовать редкое мясо бизона в ресторане шале
+            {subtitleSlider}
           </div>
         )}
       </div>

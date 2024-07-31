@@ -10,24 +10,18 @@ import { useScreenWidth } from 'hooks';
 import { ScreenWidth } from 'appConstants';
 
 import { Image } from '../Image';
-import { ShalePreview } from '../ShalePreview';
 
 import 'swiper/swiper-bundle.css';
 import './styles.css';
 
 interface ISlider {
   classNameContainer?: string;
-  list?: {
-    id: number,
-    title: string,
-    subtitle: string,
-    people: number,
-    place: number,
-    photo: string,
-  }[]
+  list?: JSX.Element[];
   images?: { img: string, id: number }[];
   countImgs?: number;
+  isControlTop?: boolean;
   isControl?: boolean;
+  fullImgs?: boolean;
 }
 
 export const Slider:FC<ISlider> = ({
@@ -35,7 +29,9 @@ export const Slider:FC<ISlider> = ({
   images,
   list,
   countImgs,
+  isControlTop,
   isControl = true,
+  fullImgs,
 }) => {
   const isTablet = useScreenWidth(ScreenWidth.tablet);
   const isMobile = useScreenWidth(ScreenWidth.mobile);
@@ -76,8 +72,14 @@ export const Slider:FC<ISlider> = ({
   }, []);
 
   return (
-    <div className={cn(classNameContainer, !isControl ? 'not_control' : '')}>
-      {!isControl && (
+    <div
+      className={cn(
+        classNameContainer,
+        isControlTop ? 'top_control' : '',
+        fullImgs ? 'full_imgs' : '',
+      )}
+    >
+      {(isControlTop && isControl) && (
         <>
           <button
             onClick={handlePrev}
@@ -95,26 +97,16 @@ export const Slider:FC<ISlider> = ({
         spaceBetween={30}
         centeredSlides
         slidesPerView={countSlider}
-        navigation={isControl}
+        navigation={!isControlTop && isControl}
         loop
         modules={[Navigation]}
         className="mySwiper"
       >
-        {list?.length && list.map((i) => (
-          <SwiperSlide
-            key={i.id}
-          >
-            <ShalePreview
-              key={i.id}
-              id={i.id}
-              title={i.title}
-              subtitle={i.subtitle}
-              people={i.people}
-              place={i.place}
-              photo={i.photo}
-            />
+        {list?.length ? list.map((i) => (
+          <SwiperSlide key={i.key}>
+            {i}
           </SwiperSlide>
-        ))}
+        )) : null}
         {images?.length && images.map(({ img, id }) => (
           <SwiperSlide
             key={id}

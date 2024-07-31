@@ -59,31 +59,34 @@ img {
   transform: rotate(180deg)
 }
 
-.not_control {
+.top_control {
   position: relative;
 
 }
-.not_control .swiper-button-prev, .not_control .swiper-button-next {
+.top_control .swiper-button-prev, .top_control .swiper-button-next {
   top: -135px;
 }
 @media screen and (max-width: 768px) {
-  .not_control .swiper-button-prev, .not_control .swiper-button-next {
+  .top_control .swiper-button-prev, .top_control .swiper-button-next {
     top: -60px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .not_control .swiper-button-prev, .not_control .swiper-button-next {
+  .top_control .swiper-button-prev, .top_control .swiper-button-next {
     top: -45px;
   }
 }
 
-.not_control .swiper-button-prev {
+.top_control .swiper-button-prev {
   left: calc(100% - 160px);
 }
 @media screen and (max-width: 768px) {
-  .not_control .swiper-button-prev {
+  .top_control .swiper-button-prev {
     left: calc(100% - 100px);
   }
 }
 
+.full_imgs .swiper-backface-hidden .swiper-slide img {
+  max-width: 100%;
+}
