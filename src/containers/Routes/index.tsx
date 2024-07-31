@@ -52,8 +52,22 @@ const Routes: FC = () => {
             path={PathName.ItemId}
             element={<ServicesItemPage />}
           />
-
         </Route>
+
+        <Route
+          path={PathName.Activity}
+          element={<ServicesPage />}
+        />
+        <Route
+          path={PathName.Activity}
+          element={<ServicesItemPage />}
+        >
+          <Route
+            path={PathName.ItemId}
+            element={<ServicesItemPage />}
+          />
+        </Route>
+
       </Route>
     </RoutesDom>
   );

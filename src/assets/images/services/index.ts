@@ -18,3 +18,6 @@ export { default as unicumPhoto } from './unicumPhoto.png';
 export { default as acquaintanceImg } from './acquaintance.png';
 export { default as feedingImg } from './feeding.png';
 export { default as gunningImg } from './gunning.png';
+
+export { default as activityFishImg } from './activityFish.png';
+export { default as activityHuntingImg } from './activityHunting.png';

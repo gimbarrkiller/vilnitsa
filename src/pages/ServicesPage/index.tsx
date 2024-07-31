@@ -1,8 +1,9 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import cn from 'classnames';
+import { useLocation } from 'react-router-dom';
 
-import { PathName, ScreenWidth } from 'appConstants';
+import { ScreenWidth, activeAndServices } from 'appConstants';
 import { useScreenWidth } from 'hooks';
 
 import { AnimatedDiv, Button, TextGold } from 'components';
@@ -12,10 +13,16 @@ import styles from './styles.module.scss';
 export const ServicesPage: FC = () => {
   const isLaptop = useScreenWidth(ScreenWidth.laptop);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const onOpenPage = useCallback((page: string) => {
     navigate(page);
   }, [navigate]);
+
+  const data = useMemo(
+    () => activeAndServices.find((d) => d.pathname === pathname) || activeAndServices[0],
+    [pathname],
+  );
 
   return (
     <div className={styles.main_container}>
@@ -35,7 +42,7 @@ export const ServicesPage: FC = () => {
               delay={200}
             >
               <h1 className={styles.main_title}>
-                Выбор развлечений
+                {data?.title}
               </h1>
 
               <AnimatedDiv
@@ -48,7 +55,7 @@ export const ServicesPage: FC = () => {
                 opacityTo={1}
               >
                 <TextGold
-                  text="В созвучии с природой"
+                  text={data?.titleGold}
                   className={styles.main_subtitle}
                 />
               </AnimatedDiv>
@@ -56,81 +63,40 @@ export const ServicesPage: FC = () => {
           </div>
         </div>
         <div className={styles.main_bottom_text}>
-          Здесь каждый сможет найти для себя что-то интересное
+          {data?.subtitleText}
         </div>
 
         <div className={styles.services_list}>
-          <div
-            role={isLaptop ? 'button' : ''}
-            tabIndex={0}
-            onClick={isLaptop ? () => onOpenPage(PathName.ServicesFerme) : () => {}}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                onOpenPage(PathName.ServicesFerme);
-              }
-            }}
-            className={styles.services_item}
-          >
-            <div className={cn(styles.services_item_img, styles.ferme)}>
-              <Button
-                onClick={() => onOpenPage(PathName.ServicesFerme)}
-                className={styles.services_item_btn}
+          {data.services.map((i) => (
+            <div
+              key={i.title}
+              role={isLaptop ? 'button' : ''}
+              tabIndex={0}
+              onClick={isLaptop ? () => onOpenPage(i.pathname) : () => {}}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  onOpenPage(i.pathname);
+                }
+              }}
+              className={styles.services_item}
+            >
+              <div
+                className={cn(styles.services_item_img, styles.ferme)}
+                style={{ backgroundImage: `url(${i.img})` }}
               >
-                Посмотреть
-              </Button>
+                <Button
+                  onClick={() => onOpenPage(i.pathname)}
+                  className={styles.services_item_btn}
+                >
+                  Посмотреть
+                </Button>
+              </div>
+              <div className={styles.services_item_title}>
+                {i.title}
+              </div>
             </div>
-            <div className={styles.services_item_title}>
-              Ферма и стрельбище
-            </div>
-          </div>
+          ))}
 
-          <div
-            role={isLaptop ? 'button' : ''}
-            tabIndex={0}
-            onClick={isLaptop ? () => onOpenPage(PathName.ServicesSauna) : () => {}}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                onOpenPage(PathName.ServicesSauna);
-              }
-            }}
-            className={styles.services_item}
-          >
-            <div className={cn(styles.services_item_img, styles.sauna)}>
-              <Button
-                onClick={() => onOpenPage(PathName.ServicesSauna)}
-                className={styles.services_item_btn}
-              >
-                Посмотреть
-              </Button>
-            </div>
-            <div className={styles.services_item_title}>
-              Банный комплекс
-            </div>
-          </div>
-
-          <div
-            role={isLaptop ? 'button' : ''}
-            tabIndex={0}
-            onClick={isLaptop ? () => onOpenPage(PathName.ServicesExcursions) : () => {}}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                onOpenPage(PathName.ServicesExcursions);
-              }
-            }}
-            className={styles.services_item}
-          >
-            <div className={cn(styles.services_item_img, styles.excursions)}>
-              <Button
-                onClick={() => onOpenPage(PathName.ServicesExcursions)}
-                className={styles.services_item_btn}
-              >
-                Посмотреть
-              </Button>
-            </div>
-            <div className={styles.services_item_title}>
-              Экскурсии
-            </div>
-          </div>
         </div>
       </AnimatedDiv>
     </div>
